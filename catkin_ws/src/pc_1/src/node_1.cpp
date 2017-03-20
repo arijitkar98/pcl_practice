@@ -8,34 +8,24 @@
 #include <pcl/io/io.h>
 #include <pcl/io/pcd_io.h>
 
+pcl::visualization::CloudViewer viewer("Cloud Viewer");
+
 void cloud_callback (const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 {
-	pcl::PCLPointCloud2 pcl_pc2;
-	pcl_conversions::toPCL(*cloud_msg,pcl_pc2);
-	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-	pcl::fromPCLPointCloud2(pcl_pc2,*cloud);
+  pcl::PCLPointCloud2 pcl_pc2;
+  pcl_conversions::toPCL(*cloud_msg,pcl_pc2);
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+  pcl::fromPCLPointCloud2(pcl_pc2,*cloud);
 
-	for (size_t i = 0; i < cloud->points.size (); ++i)
-		std::cout << " "    << cloud->points[i].x
-               	  << " "    << cloud->points[i].y
-	              << " "    << cloud->points[i].z << std::endl;
-
-	pcl::visualization::CloudViewer viewer("Cloud Viewer");
-
-	viewer.showCloud(cloud);
-
-	while (!viewer.wasStopped ())
-	{
-	  continue;
-	}
+  viewer.showCloud(cloud);
 }
 
 int main (int argc, char** argv)
 {
-	ros::init (argc, argv, "node_1");
-	ros::NodeHandle nh;
+  ros::init (argc, argv, "node_1");
+  ros::NodeHandle nh;
 
-	ros::Subscriber sub = nh.subscribe ("/velodyne_points", 1, cloud_callback);
+  ros::Subscriber sub = nh.subscribe ("/velodyne_points", 1, cloud_callback);
 
-	ros::spin ();
+  ros::spin ();
 }
