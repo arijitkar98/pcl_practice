@@ -24,10 +24,10 @@ void cloud_callback (const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
 	viewer.showCloud(cloud);
 
-	// while (!viewer.wasStopped ())
-	// {
-	//   continue;
-	// }
+	while (!viewer.wasStopped ())
+	{
+	  continue;
+	}
 }
 
 int main (int argc, char** argv)
