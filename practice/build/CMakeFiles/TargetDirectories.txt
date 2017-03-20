@@ -1,0 +1,2 @@
+/home/arijit/AK_Progs/AGV/3d_pointcloud/pcl_practice/practice/build/CMakeFiles/pcd_read.dir
+/home/arijit/AK_Progs/AGV/3d_pointcloud/pcl_practice/practice/build/CMakeFiles/pcd_write.dir

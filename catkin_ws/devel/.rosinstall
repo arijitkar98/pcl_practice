@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/arijit/AK_Progs/AGV/3d_pointcloud/pcl_practice/catkin_ws/devel/setup.sh

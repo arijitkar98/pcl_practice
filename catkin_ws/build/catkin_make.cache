@@ -1,0 +1,2 @@
+pc_1
+-DCATKIN_DEVEL_PREFIX=/home/arijit/AK_Progs/AGV/3d_pointcloud/pcl_practice/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/arijit/AK_Progs/AGV/3d_pointcloud/pcl_practice/catkin_ws/install -G Unix Makefiles
